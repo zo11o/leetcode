@@ -2,6 +2,8 @@
 var reverse = function (x) {
   let result = 0
 
+  // 精髓
+  // 一个数对10取余数得到个位数数字 如 235 % 10 == 5
   while (x !== 0) {
     result = result * 10 + x % 10
     x = parseInt(x / 10)
