@@ -1,8 +1,6 @@
 
 function formatData (data) {
-  let result = Array.from({ length: 12 }).map((o,index) => {
-    return data[index + 1] || null
-  })
+  let result = Array.from({ length: 12 }).map((o, index) => data[index + 1] || null)
 
   console.log(result)
 
