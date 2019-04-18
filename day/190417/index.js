@@ -24,7 +24,7 @@
   // I am eating junk food
  */
 
-class LazyMan {
+class LazyManClass {
   constructor (name) {
     let that = this
     this.name = name
@@ -88,7 +88,11 @@ class LazyMan {
   }
 }
 
-let man = new LazyMan('James')
+function LazyMan (name) {
+  return new LazyManClass(name)
+}
+
+// let man = new LazyMan('James')
 // man.sleep(1).eat('lunch')
 // man.eat('lunch').sleep(2).eat('dinner')
-man.eat('lunch').eat('dinner').sleepFirst(1).sleep(2).eat('junk food')
+LazyMan('James').eat('lunch').eat('dinner').sleepFirst(1).sleep(2).eat('junk food')
