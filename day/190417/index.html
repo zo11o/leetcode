@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>要求设计 LazyMan 类，实现以下功能。</title>
+    <script src="./index.js"></script>
+    <style>
+        pre  {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            font-size: 85%;
+            line-height: 1.45;
+            overflow: auto;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p><a href="https://github.com/Advanced-Frontend/Daily-Interview-Question">第 56 题：要求设计 LazyMan 类，实现以下功能。</a></p>
+    <pre>
+        <span class="pl-en">LazyMan</span>(<span class="pl-s"><span class="pl-pds">'</span>Tony<span class="pl-pds">'</span></span>);
+        <span class="pl-c"><span class="pl-c">//</span> Hi I am Tony</span>
+        
+        <span class="pl-en">LazyMan</span>(<span class="pl-s"><span class="pl-pds">'</span>Tony<span class="pl-pds">'</span></span>).<span class="pl-en">sleep</span>(<span class="pl-c1">10</span>).<span class="pl-en">eat</span>(<span class="pl-s"><span class="pl-pds">'</span>lunch<span class="pl-pds">'</span></span>);
+        <span class="pl-c"><span class="pl-c">//</span> Hi I am Tony</span>
+        <span class="pl-c"><span class="pl-c">//</span> 等待了10秒...</span>
+        <span class="pl-c"><span class="pl-c">//</span> I am eating lunch</span>
+        
+        <span class="pl-en">LazyMan</span>(<span class="pl-s"><span class="pl-pds">'</span>Tony<span class="pl-pds">'</span></span>).<span class="pl-en">eat</span>(<span class="pl-s"><span class="pl-pds">'</span>lunch<span class="pl-pds">'</span></span>).<span class="pl-en">sleep</span>(<span class="pl-c1">10</span>).<span class="pl-en">eat</span>(<span class="pl-s"><span class="pl-pds">'</span>dinner<span class="pl-pds">'</span></span>);
+        <span class="pl-c"><span class="pl-c">//</span> Hi I am Tony</span>
+        <span class="pl-c"><span class="pl-c">//</span> I am eating lunch</span>
+        <span class="pl-c"><span class="pl-c">//</span> 等待了10秒...</span>
+        <span class="pl-c"><span class="pl-c">//</span> I am eating diner</span>
+        
+        <span class="pl-en">LazyMan</span>(<span class="pl-s"><span class="pl-pds">'</span>Tony<span class="pl-pds">'</span></span>).<span class="pl-en">eat</span>(<span class="pl-s"><span class="pl-pds">'</span>lunch<span class="pl-pds">'</span></span>).<span class="pl-en">eat</span>(<span class="pl-s"><span class="pl-pds">'</span>dinner<span class="pl-pds">'</span></span>).<span class="pl-en">sleepFirst</span>(<span class="pl-c1">5</span>).<span class="pl-en">sleep</span>(<span class="pl-c1">10</span>).<span class="pl-en">eat</span>(<span class="pl-s"><span class="pl-pds">'</span>junk food<span class="pl-pds">'</span></span>);
+        <span class="pl-c"><span class="pl-c">//</span> Hi I am Tony</span>
+        <span class="pl-c"><span class="pl-c">//</span> 等待了5秒...</span>
+        <span class="pl-c"><span class="pl-c">//</span> I am eating lunch</span>
+        <span class="pl-c"><span class="pl-c">//</span> I am eating dinner</span>
+        <span class="pl-c"><span class="pl-c">//</span> 等待了10秒...</span>
+        <span class="pl-c"><span class="pl-c">//</span> I am eating junk food</span>
+    </pre>
+</body>
+</html>
