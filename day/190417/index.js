@@ -26,10 +26,69 @@
 
 class LazyMan {
   constructor (name) {
+    let that = this
     this.name = name
+    this.taskQueue = []
     console.log('Hi I am Tony')
+    setTimeout(() => {
+      // console.log('task 0')
+      that.next()
+    }, 0)
+  }
+
+  eat (name) {
+    let that = this
+    const fn = (function (n) {
+      return function (params) {
+        console.log(`I am eating ${n}`)
+        that.next()
+      }
+    })(name)
+    this.taskQueue.push(fn)
+    // console.log('task eat')
+
+    return this
+  }
+
+  sleepFirst (time) {
+    let that = this
+
+    let fn = (function (t) {
+      return function () {
+        setTimeout(() => {
+          console.log('等待了' + t + '秒')
+          that.next()
+        }, t * 1000)
+      }
+    })(time)
+
+    this.taskQueue.unshift(fn)
+
+    return this
+  }
+
+  sleep (delay) {
+    let that = this
+    const fn = (function (t) {
+      return function () {
+        setTimeout(() => {
+          console.log('等待了' + t + '秒')
+          that.next()
+        }, t * 1000)
+      }
+    })(delay)
+    this.taskQueue.push(fn)
+    // console.log('task sleep')
+    return this
+  }
+
+  next () {
+    const fn = this.taskQueue.shift()
+    return fn && fn()
   }
 }
 
-let a = new LazyMan()
-console.log(a)
+let man = new LazyMan('James')
+// man.sleep(1).eat('lunch')
+// man.eat('lunch').sleep(2).eat('dinner')
+man.eat('lunch').eat('dinner').sleepFirst(1).sleep(2).eat('junk food')
