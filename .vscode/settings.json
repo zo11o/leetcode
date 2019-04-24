@@ -9,5 +9,9 @@
     "eslint.validate": [
         "javascript",
         "javascriptreact"
-    ]
+    ],
+
+    // 文章头
+    "fileheader.Author": "zo11o",
+    "fileheader.LastModifiedBy": "zo11o"
 }
