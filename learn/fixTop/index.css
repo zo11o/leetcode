@@ -1,0 +1,21 @@
+.fix-table-container {
+  height: 200px;
+  overflow-y: scroll;
+}
+.fix-table-container .table {
+  position: relative;
+}
+.fix-table-container .table .thead {
+  color: red;
+  position: fixed;
+  width: 100%;
+}
+.fix-table-container .table .thead .trhd {
+  width: 10%;
+}
+.fix-table-container .table .tbody {
+  position: absolute;
+}
+.fix-table-container .table .tfoot {
+  position: absolute;
+}
