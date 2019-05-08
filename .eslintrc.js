@@ -1,3 +1,6 @@
 module.exports = {
-    "extends": ["standard","plugin:jest/recommended"]
+    "extends": ["standard","plugin:jest/recommended"],
+    "globals": {
+      "$": true
+  },
 };
