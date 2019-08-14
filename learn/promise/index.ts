@@ -157,10 +157,13 @@ class MyPromise {
     }
 }
 
-var promise = new MyPromise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(22)
-    }, 1000);
-}).then(json => {
-    console.log(json)
-})
+var promise1 =function() {
+    return new MyPromise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(22)
+        }, 1000);
+    })
+}
+
+promise1()
+    .then(json => console.log(json))

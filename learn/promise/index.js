@@ -12,7 +12,7 @@ var MyPromise = /** @class */ (function () {
                 fn(this.resolve.bind(this), this.reject.bind(this));
             }
             else {
-                // throw "传出入的参数不为函数";
+                throw "传出入的参数不为函数";
             }
         }
         catch (error) {
@@ -42,6 +42,14 @@ var MyPromise = /** @class */ (function () {
      * @param reason
      */
     MyPromise.prototype.reject = function (reason) {
+        var _this = this;
+        setTimeout(function () {
+            if (_this.currentState === PENDING) {
+                _this.currentState = REJECTED;
+                _this.value = reason;
+                _this.rejectedCallbacks.forEach(function (cb) { return cb(); });
+            }
+        }, 0);
     };
     MyPromise.prototype.then = function (onResolved, onRejected) {
         var _this = this;
@@ -60,6 +68,17 @@ var MyPromise = /** @class */ (function () {
                         reject(reason);
                     }
                 }, 0);
+            }));
+        }
+        if (this.currentState === REJECTED) {
+            return (promise2 = new MyPromise(function (resolve, reject) {
+                try {
+                    var x = onResolved(self.value);
+                    self.resolutionProcedure(promise2, x, resolve, reject);
+                }
+                catch (reason) {
+                    reject(reason);
+                }
             }));
         }
         if (this.currentState === PENDING) {
@@ -132,10 +151,11 @@ var MyPromise = /** @class */ (function () {
     };
     return MyPromise;
 }());
-var promise = new MyPromise(function (resolve, reject) {
-    setTimeout(function () {
-        resolve(22);
-    }, 1000);
-}).then(function (json) {
-    console.log(json);
-});
+var promise1 = function () {
+    return new MyPromise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve(22);
+        }, 1000);
+    });
+};
+promise1().then(function (json) { return console.log(json); });
