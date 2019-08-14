@@ -78,6 +78,17 @@ class MyPromise {
             }))
         }
 
+        if (this.currentState === REJECTED) {
+            return (promise2 = new MyPromise((resolve, reject) => {
+                try {
+                    var x = onResolved(self.value)
+                    self.resolutionProcedure(promise2, x, resolve, reject);
+                } catch (reason) {
+                    reject(reason)
+                }
+            }))
+        }
+
         if (this.currentState === PENDING) {
             return (promise2 = new MyPromise((resolve, reject) => {
                 this.resolvedCallbacks.push(function() {
