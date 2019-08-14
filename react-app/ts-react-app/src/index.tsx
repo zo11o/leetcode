@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 // import App from './routers';
-// import App from './App';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import PrimaryLayout from './routers'
+// import PrimaryLayout from './routers'
 
 // const UserSubLayout = () => (
 //   <div className="user-sub-layout">
@@ -41,11 +41,11 @@ import PrimaryLayout from './routers'
 //   </div>
 // )
 
-const App = () => (
-  <BrowserRouter>
-    <PrimaryLayout />
-  </BrowserRouter>
-)
+// const App = () => (
+//   <BrowserRouter>
+//     <PrimaryLayout />
+//   </BrowserRouter>
+// )
 
 
 ReactDOM.render(

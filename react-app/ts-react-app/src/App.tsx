@@ -1,24 +1,22 @@
 import * as React from 'react';
-import './App.css';
+const useState = React.useState;
 
-import logo from './logo.svg';
-import Index from './pages/index';
+function App () {
+    const [count, setCount] = useState(0);
 
-class App extends React.Component {
-  public render () {
+    const a = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        console.log(e);
+        setCount(count + 1);
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Index />
-      </div>
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={a}>
+                Click me
+            </button>
+        </div>
     );
-  }
 }
 
 export default App;
