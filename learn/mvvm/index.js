@@ -28,6 +28,10 @@ function Mue(options, prop) {
   this.$data = options.data;
   this.$prop = prop;
   this.$el = document.querySelector(options.el);
+
+  Object.keys(this.$data).forEach(key => {
+    this.proxyData(key)
+  })
   this.init();
 }
 
@@ -38,4 +42,15 @@ Mue.prototype.init = function () {
   //   this.$el.textContent = value;
   // })
   new Compile(this);
+}
+
+Mue.prototype.proxyData = function (key) {
+  Object.defineProperty(this.$data, key, {
+    get: function () {
+      return this.$data[key]
+    },
+    set: function (value) {
+      this.$data[key] = value;
+    }
+  })
 }
