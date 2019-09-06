@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue 双向绑定 简单实现</title>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="name" type="text">
+        <h1>{{name}}</h1>
+    </div>
+    <!-- <header>
+        <h1>vue 双向绑定 简单实现</h1>
+    </header>
+    <section>
+        <label class="" for="name">请在这里输入名字：
+            <input id="name" />
+        </label>
+        <article>
+            {{ data.name }} ，你好啊！！
+        </article>
+        <article>
+            这是我的朋友：{{ data.friend }}
+        </article>
+        <div>
+            <button>我要展示其他朋友</button>
+        </div>
+    </section> -->
+    <script src="observer.js"></script>
+    <script src="watcher.js"></script>
+    <script src="compile.js"></script>
+    <script src="index.js"></script>
+    <script>
+        const vm = new Mue({
+            el: '#app',
+            data: {
+                name: '摩登'
+            }
+        }, 'name')
+
+    </script>
+</body>
+
+</html>
