@@ -45,7 +45,8 @@ Mue.prototype.init = function () {
 }
 
 Mue.prototype.proxyData = function (key) {
-  Object.defineProperty(this.$data, key, {
+  console.log(this)
+  Object.defineProperty(this, key, {
     get: function () {
       return this.$data[key]
     },
