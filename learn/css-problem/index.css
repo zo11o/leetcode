@@ -1,0 +1,91 @@
+.p-1 {}
+
+.p-1 .p-1-1 {
+    font-size: 0;
+}
+
+.p-1-1 .span {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.p2 .i {
+    letter-spacing: -800px;
+    /* display: block; */
+}
+
+.p3 * {
+    margin: 0;
+    padding: 0;
+}
+
+.p3 .left {
+    background: #73DE80;
+    /* 绿色 */
+    opacity: 0.5;
+    border: 3px solid #F31264;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.p3 .right {
+    /* 粉色 */
+    background: #EF5BE2;
+    opacity: 0.5;
+    border: 3px solid #F31264;
+    width: 400px;
+    min-height: 100px;
+}
+
+.p3 .box {
+    background: #888;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.p4 .box {
+    width: 280px;
+    outline: #73DE80 solid 1px;
+    text-align: center;
+    /* font-size: 16px; */
+    /* line-height: 1.5; */
+}
+
+.p4 .box>img {
+    height: 96px;
+    /* vertical-align: top; */
+    display: block;
+}
+
+
+.p5 .box {
+    overflow: hidden;
+    /* position: absolute; */
+}
+
+.p5 img {
+    float: left;
+}
+
+.p6 {
+    overflow: hidden;
+    margin: 20px;
+}
+
+.p6 .box1 {
+    width: 100px;
+    height: 100px;
+    background-color: #73DE80;
+    margin-bottom: 10px;
+}
+
+.p6 .box2 {
+    /* float: left; */
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 100px;
+    height: 100px;
+    background-color: #744E80;
+}
+

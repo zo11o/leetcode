@@ -113,3 +113,18 @@ for (const t of inOrder(make(tree))) {
 }
 
 console.log(result)
+
+function * gen () {
+  console.log(this)
+  yield 1
+  console.log(this)
+  yield 3
+  return 2
+}
+
+let g = gen()
+
+console.log(
+  g.next().value,
+  g.next().value
+)

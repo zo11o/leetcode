@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1px问题</title>
+    <style>
+    .scale-1px {
+        position: relative;
+        border: none;
+        margin-bottom: 20px;
+        width: 60px;
+    }
+    .scale-1px::after{
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        width: 200%;
+        height: 200%;
+        border: 1px solid #000;
+        top: 0;
+        left: 0;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        -webkit-transform-origin: top left;
+        transform-origin: top left ;
+    }
+    </style>
+</head>
+<body>
+    <div class="scale-1px">
+        hello
+    </div>
+</body>
+</html>
