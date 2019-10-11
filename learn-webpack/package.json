@@ -1,0 +1,29 @@
+{
+  "name": "learn-webpack",
+  "version": "0.0.1",
+  "description": "一个 webpack 测试项目",
+  "main": "src/index.js",
+  "author": "zorro",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --config='./build/webpack.config.js'"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-import-plugin": "^1.6.1",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
