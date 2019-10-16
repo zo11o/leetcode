@@ -8,7 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/my-app/node_modules/react-scripts/bin/react-scripts.js",
+            // "program": "${workspaceFolder}/my-app/node_modules/react-scripts/bin/react-scripts.js",
+            "program": "${workspaceFolder}/learn-webpack/dist/bundle.js",
             // "program": "${workspaceFolder}/learn/es6-iterator/thunk.js",
             "args": [
                 "start" // 传入 start 做参数

@@ -8,7 +8,7 @@ module.exports = {
     path: path.resolve(__dirname,'../dist')
   },
 
-  mode: 'production',
+  mode: 'development',
 
   devtool: "source-map",
 
@@ -27,6 +27,22 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1
+            }
+          },
+          { loader: "typed-css-modules-loader" }
+        ],
+        exclude: /node_modules/,
+        include: path.resolve(__dirname, '../src')
       }
     ]
   },
