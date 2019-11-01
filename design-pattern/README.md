@@ -10,7 +10,7 @@
 
 ##### 1.2.2 分时函数
 
-[链接]('./timerSlice.js')
+[分时函数](https://github.com/zo11o/leetcode/blob/master/design-pattern/timerSlice)
 
 > 分时函数：让事件分批进行 
 
